@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_app/view/splash_screen.dart';
+
+
+import 'features/auth/view/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
