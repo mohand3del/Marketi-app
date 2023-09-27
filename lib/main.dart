@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marketi_app/features/layout/presentation/view/layout_view.dart';
+import 'package:marketi_app/features/layout/presentation/view_model/cubit/cubit.dart';
 
 
 import 'features/auth/view/splash_screen.dart';
@@ -13,14 +16,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (BuildContext context)=>LayoutCubit(),)
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        //home: const SplashScreen(),
+        home:  const LayoutView(),
       ),
-      home: const SplashScreen(),
     );
   }
 }
