@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:marketi_app/features/layout/presentation/view_model/cubit/cubit.dart';
 import 'package:marketi_app/features/layout/presentation/view_model/cubit/states.dart';
 
@@ -31,19 +32,19 @@ class BottomNavBar extends StatelessWidget {
             items: const [
               BottomNavigationBarItem(
                 label: 'Home',
-                icon: Icon(Icons.home),
+                icon: Icon(FontAwesomeIcons.houseChimney),
               ),
               BottomNavigationBarItem(
                 label: 'Cart',
-                icon: Icon(Icons.shopping_cart),
+                icon: Icon(FontAwesomeIcons.cartShopping),
               ),
               BottomNavigationBarItem(
                 label: 'Favorites',
-                icon: Icon(Icons.favorite),
+                icon: Icon(FontAwesomeIcons.heart),
               ),
               BottomNavigationBarItem(
                 label: 'Menu',
-                icon: Icon(Icons.menu),
+                icon: Icon(FontAwesomeIcons.bars),
               ),
             ],
           ),
