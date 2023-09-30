@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:marketi_app/core/utils/constant.dart';
 
-class BuildItem extends StatelessWidget {
-  const BuildItem({super.key});
+class BuildItemListView extends StatelessWidget {
+  BuildItemListView({super.key, required this.cart});
 
+  @required bool cart=true;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -11,7 +13,7 @@ class BuildItem extends StatelessWidget {
       elevation: 5,
       shadowColor: const Color(0xffD9E6FF),
       child: Container(
-        height: 144,
+       height:cart?176:144,
         width: 160,
         decoration: BoxDecoration(
             color: Colors.white,
@@ -116,13 +118,43 @@ class BuildItem extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 5,
-              ),                  child: Text('Smart Watch',
+              ),
+              child: Text('Smart Watch',
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 12,
               ),
             ),
-            )
+            ),
+           if(cart)
+             const SizedBox(
+               height: 4,
+             ),
+            if(cart)
+              Center(
+              child: InkWell(
+                onTap: (){},
+                child: Container(
+                  width: 120,
+                  height: 28,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(color: kPrimaryColor,),
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Add',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: kPrimaryColor,
+                      ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
