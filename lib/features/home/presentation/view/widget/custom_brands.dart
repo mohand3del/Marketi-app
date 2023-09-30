@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:marketi_app/core/utils/components.dart';
-import 'package:marketi_app/features/home/presentation/view/widget/build_item.dart';
 
-class CustomPopularProduct extends StatelessWidget {
-  const CustomPopularProduct({super.key});
+import '../../../../../core/utils/components.dart';
+
+class CustomBrands extends StatelessWidget {
+  const CustomBrands({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         buildTitle(
-            title: 'Popular Product',
-            text: 'View all',
-            function: (){},
+          title: 'Brands',
+          text: 'View all',
+          function: (){},
         ),
         SizedBox(
-          height: 166,
+          height: 122,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            itemBuilder: (context,index)=> BuildItemListView(cart: false),
+            itemBuilder: (context,index)=> buildItemCategory(),
             separatorBuilder: (context,index)=>const SizedBox(
               width: 16,
             ),
