@@ -5,8 +5,8 @@ import 'package:marketi_app/features/home/presentation/view/widget/custom_brands
 import 'package:marketi_app/features/home/presentation/view/widget/custom_buy_again.dart';
 import 'package:marketi_app/features/home/presentation/view/widget/custom_category.dart';
 
+import '../../../../../core/utils/components.dart';
 import 'custom_popular_product.dart';
-import 'custom_search.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -27,7 +27,7 @@ class HomeViewBody extends StatelessWidget {
               child: Column(
                 children: [
                   const CustomAppBar(),
-                  const CustomSearch(),
+                   buildSearch(),
                   Container(
                     margin: const EdgeInsets.only(bottom: 14),
                     height: 120,

@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/constant.dart';
+
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Stack(
           alignment: AlignmentDirectional.center,
           children: [
-            CircleAvatar(
-              radius: 32,
-              backgroundColor: Colors.blue,
+            Container(
+              height: 48,
+              width: 48,
+              decoration: BoxDecoration(
+                border: Border.all(color: kPrimaryColor),
+                shape: BoxShape.circle,
+              ),
             ),
-            CircleAvatar(
-              radius: 30,
+            const CircleAvatar(
+              radius: 20,
               backgroundImage: NetworkImage('https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80'),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
-        Expanded(
+        const Expanded(
           child: Text('Hi Moaz !',
             style: TextStyle(
               fontSize: 20,
@@ -31,8 +37,7 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
         ),
-        //Spacer(),
-        Stack(
+        const Stack(
           alignment: AlignmentDirectional.topEnd,
           children: [
             CircleAvatar(

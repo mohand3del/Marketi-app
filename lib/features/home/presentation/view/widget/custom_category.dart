@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:marketi_app/core/utils/constant.dart';
+import 'package:marketi_app/features/home/presentation/view/widget/view_category.dart';
 
 import '../../../../../core/utils/components.dart';
 
@@ -12,7 +14,9 @@ class CustomCategory extends StatelessWidget {
         buildTitle(
           title: 'Category',
           text: 'View all',
-          function: (){},
+          function: (){
+            navigateTo(context, const ViewCategory(text: 'All Categories',textTitle: 'Categories',));
+          },
         ),
         SizedBox(
           height: 266,
@@ -20,8 +24,10 @@ class CustomCategory extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
+              crossAxisSpacing: 16,
+              childAspectRatio: 1/1.1
             ),
-            itemBuilder: (context,index)=>buildItemCategory(),
+            itemBuilder: (context,index)=>buildItemCategory(context),
             itemCount: 6,
           ),
         ),
